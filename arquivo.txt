@@ -1,0 +1,4 @@
+4#Notebok não liga#Impressora#Chamado da Maria
+4#Acesso VPN#Rede#Chamado da Maria
+3#Erro de impressão#Impressora#Chamado José
+3#Solicita mouse novo#Hardware#Chamado José
