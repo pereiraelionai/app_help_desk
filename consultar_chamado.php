@@ -1,20 +1,6 @@
 <?php
   require_once 'validador_acesso.php';
-?>
-
-<?php
-//chamados
-$chamados = array();
-//abrir o arquivo
-$arquivo = fopen('arquivo.txt', 'r');
-
-//enquanto houver registros funciona o while
-while (!feof($arquivo)) {
-    $registro = fgets($arquivo);
-    $chamados[] = $registro;
-}
-//fechar arquivo
-fclose($arquivo);
+  require 'consultando_arquivo.php';
 ?>
 
 <html>
@@ -63,24 +49,17 @@ fclose($arquivo);
               ?>
 
               <?php
-              $chamado_dados = explode('#', $chamado);
-              
-              if ($_SESSION['perfil_id'] == 2) {
-                if ($_SESSION['id'] != $chamado_dados[0]) {
-                  continue;
-                };
-              }
 
-              if (count($chamado_dados) < 3) {
+              if (count($chamado) < 3) {
                 continue;
               }
               ?>
 
               <div class="card mb-3 bg-light">
                 <div class="card-body">
-                  <h5 class="card-title"><?= $chamado_dados[1] ?></h5>
-                  <h6 class="card-subtitle mb-2 text-muted"><?= $chamado_dados[2] ?></h6>
-                  <p class="card-text"><?= $chamado_dados[3] ?></p>
+                  <h5 class="card-title"><?= $chamado[1] ?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><?= $chamado[2] ?></h6>
+                  <p class="card-text"><?= $chamado[3] ?></p>
 
                 </div>
               </div>
